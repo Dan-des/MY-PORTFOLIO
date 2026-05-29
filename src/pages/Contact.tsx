@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Mail, MapPin, Send } from 'lucide-react';
+import { Mail, MapPin, Phone, Send } from 'lucide-react';
 import { useState } from 'react';
 
 export default function Contact() {
@@ -89,6 +89,18 @@ export default function Contact() {
         >
           <h3 className="text-2xl font-bold text-slate-900 mb-2">Contact Details</h3>
           
+          <div className="flex items-start gap-4">
+            <div className="bg-white p-3 rounded-full shadow-sm border border-slate-200">
+              <Phone className="text-slate-700" size={24} />
+            </div>
+            <div>
+              <p className="text-sm font-medium text-slate-500 mb-1">Phone</p>
+              <a href="tel:+2348164154662" className="text-lg font-semibold text-slate-900 hover:text-slate-600 transition-colors">
+                +2348164154662
+              </a>
+            </div>
+          </div>
+
           <div className="flex items-start gap-4">
             <div className="bg-white p-3 rounded-full shadow-sm border border-slate-200">
               <Mail className="text-slate-700" size={24} />
