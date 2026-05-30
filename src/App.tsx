@@ -136,8 +136,13 @@ function Navbar({ theme, toggleTheme }: NavbarProps) {
     <nav className="fixed w-full bg-white/80 dark:bg-slate-950/80 backdrop-blur-md z-50 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
-          <Link to="/" className="text-xl font-bold tracking-tighter text-slate-900 dark:text-white">
-            Olatunde Daniel Oluseyi
+          <Link to="/" className="flex items-center gap-3 text-xl font-bold tracking-tighter text-slate-900 dark:text-white group">
+            <img 
+              src="/favicon.svg" 
+              alt="Logo" 
+              className="w-7 h-7 object-contain transition-transform duration-355 group-hover:rotate-12" 
+            />
+            <span>Olatunde Daniel Oluseyi</span>
           </Link>
           
           {/* Desktop Menu */}
