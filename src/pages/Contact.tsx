@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
-import { Mail, MapPin, Phone, Send } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Mail, MapPin, Phone, Send, Check, Copy } from 'lucide-react';
 import { useState } from 'react';
 import { SOCIAL_LINKS, BehanceIcon, LinkedinIcon, InstagramIcon, TiktokIcon, WhatsappIcon } from '../App';
 
@@ -12,12 +12,27 @@ export default function Contact() {
   });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
+  
+  const [copiedEmail, setCopiedEmail] = useState(false);
+  const [copiedPhone, setCopiedPhone] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
+  };
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText("workwithdan6@gmail.com");
+    setCopiedEmail(true);
+    setTimeout(() => setCopiedEmail(false), 2000);
+  };
+
+  const handleCopyPhone = () => {
+    navigator.clipboard.writeText("+2348164154662");
+    setCopiedPhone(true);
+    setTimeout(() => setCopiedPhone(false), 2000);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -92,31 +107,75 @@ export default function Contact() {
             <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Contact Details</h3>
             
             <div className="flex items-start gap-4">
-              <div className="bg-white dark:bg-slate-950 p-3 rounded-full shadow-sm border border-slate-200 dark:border-slate-800">
+              <div className="bg-white dark:bg-slate-950 p-3 rounded-full shadow-sm border border-slate-200 dark:border-slate-800 flex-shrink-0">
                 <Phone className="text-slate-700 dark:text-slate-350" size={24} />
               </div>
-              <div>
+              <div className="flex-grow">
                 <p className="text-sm font-medium text-slate-500 mb-1">Phone</p>
-                <a href="tel:+2348164154662" className="text-lg font-semibold text-slate-900 dark:text-white hover:text-slate-600 dark:hover:text-slate-300 transition-colors">
-                  +2348164154662
-                </a>
+                <div className="flex items-center gap-3">
+                  <a href="tel:+2348164154662" className="text-lg font-semibold text-slate-900 dark:text-white hover:text-slate-600 dark:hover:text-slate-300 transition-colors">
+                    +2348164154662
+                  </a>
+                  <button 
+                    onClick={handleCopyPhone}
+                    className="p-1.5 rounded text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-900 transition-all cursor-pointer relative"
+                    aria-label="Copy phone number"
+                  >
+                    {copiedPhone ? <Check className="text-emerald-500" size={16} /> : <Copy size={16} />}
+                    {/* Tooltip */}
+                    <AnimatePresence>
+                      {copiedPhone && (
+                        <motion.span 
+                          initial={{ opacity: 0, scale: 0.8, y: 5 }}
+                          animate={{ opacity: 1, scale: 1, y: -5 }}
+                          exit={{ opacity: 0, scale: 0.8, y: 5 }}
+                          className="absolute bottom-full left-1/2 -translate-x-1/2 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 text-xs px-2 py-1 rounded shadow-md pointer-events-none whitespace-nowrap font-medium z-10"
+                        >
+                          Copied!
+                        </motion.span>
+                      )}
+                    </AnimatePresence>
+                  </button>
+                </div>
               </div>
             </div>
 
             <div className="flex items-start gap-4">
-              <div className="bg-white dark:bg-slate-950 p-3 rounded-full shadow-sm border border-slate-200 dark:border-slate-800">
+              <div className="bg-white dark:bg-slate-950 p-3 rounded-full shadow-sm border border-slate-200 dark:border-slate-800 flex-shrink-0">
                 <Mail className="text-slate-700 dark:text-slate-350" size={24} />
               </div>
-              <div>
+              <div className="flex-grow">
                 <p className="text-sm font-medium text-slate-500 mb-1">Email</p>
-                <a href="mailto:workwithdan6@gmail.com" className="text-lg font-semibold text-slate-900 dark:text-white hover:text-slate-600 dark:hover:text-slate-300 transition-colors">
-                  workwithdan6@gmail.com
-                </a>
+                <div className="flex items-center gap-3">
+                  <a href="mailto:workwithdan6@gmail.com" className="text-lg font-semibold text-slate-900 dark:text-white hover:text-slate-600 dark:hover:text-slate-300 transition-colors">
+                    workwithdan6@gmail.com
+                  </a>
+                  <button 
+                    onClick={handleCopyEmail}
+                    className="p-1.5 rounded text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-900 transition-all cursor-pointer relative"
+                    aria-label="Copy email address"
+                  >
+                    {copiedEmail ? <Check className="text-emerald-500" size={16} /> : <Copy size={16} />}
+                    {/* Tooltip */}
+                    <AnimatePresence>
+                      {copiedEmail && (
+                        <motion.span 
+                          initial={{ opacity: 0, scale: 0.8, y: 5 }}
+                          animate={{ opacity: 1, scale: 1, y: -5 }}
+                          exit={{ opacity: 0, scale: 0.8, y: 5 }}
+                          className="absolute bottom-full left-1/2 -translate-x-1/2 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 text-xs px-2 py-1 rounded shadow-md pointer-events-none whitespace-nowrap font-medium z-10"
+                        >
+                          Copied!
+                        </motion.span>
+                      )}
+                    </AnimatePresence>
+                  </button>
+                </div>
               </div>
             </div>
 
             <div className="flex items-start gap-4">
-              <div className="bg-white dark:bg-slate-950 p-3 rounded-full shadow-sm border border-slate-200 dark:border-slate-800">
+              <div className="bg-white dark:bg-slate-950 p-3 rounded-full shadow-sm border border-slate-200 dark:border-slate-800 flex-shrink-0">
                 <MapPin className="text-slate-700 dark:text-slate-350" size={24} />
               </div>
               <div>
