@@ -93,22 +93,17 @@ export function TiktokIcon({ size = 20, className = "" }: { size?: number; class
   );
 }
 
-// Custom WhatsApp Icon
+// Custom WhatsApp Icon (Filled and simplified to prevent distortion)
 export function WhatsappIcon({ size = 20, className = "" }: { size?: number; className?: string }) {
   return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+    <svg 
+      width={size} 
+      height={size} 
+      viewBox="0 0 24 24" 
+      fill="currentColor" 
       className={className}
     >
-      <path d="M17.49 15.3c-.3-.15-1.74-.86-2-1-.28-.1-.48-.15-.68.15-.2.3-.78.98-.95 1.18-.18.2-.35.23-.65.08A9.82 9.82 0 0 1 9.4 12.8a10.82 10.82 0 0 1-1.92-2.4c-.17-.3-.02-.47.13-.62.14-.13.3-.35.45-.53.15-.17.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.68-1.63-.93-2.24-.24-.6-.5-.5-.68-.5-.18 0-.38-.03-.58-.03a1.12 1.12 0 0 0-.82.38 3.4 3.4 0 0 0-1.06 2.53c0 1.5 1.08 2.93 1.23 3.13.15.2 2.11 3.22 5.12 4.52.72.3 1.28.5 1.72.64.72.23 1.38.2 1.9.12.58-.08 1.74-.7 1.98-1.4.24-.67.24-1.25.17-1.37-.08-.12-.26-.2-.56-.35z" />
-      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+      <path d="M12.004 2c-5.51 0-9.99 4.49-9.99 10 0 1.9.53 3.68 1.46 5.22L2 22l5.03-1.33c1.47.81 3.14 1.27 4.97 1.27 5.51 0 9.99-4.49 9.99-10s-4.48-10-9.99-10zm5.72 13c-.24.68-1.21 1.24-1.74 1.33-.45.08-1.03.11-1.66-.09-.4-.13-.93-.32-1.59-.6-2.82-1.21-4.66-4.08-4.8-4.28-.14-.19-1.15-1.53-1.15-2.92 0-1.39.72-2.07.98-2.35.26-.28.58-.35.77-.35s.38 0 .55.01c.18.01.42-.07.66.5.24.58.83 2.02.9 2.16.07.14.12.31.02.5-.1.19-.22.31-.38.5-.16.19-.34.42-.48.57-.16.16-.33.34-.14.67.19.32.84 1.38 1.81 2.24.97.86 1.78 1.33 2.11 1.49.33.16.52.12.72-.11.2-.23.86-1.01 1.09-1.36.23-.35.46-.29.77-.18s1.97.97 2.31 1.14c.34.17.57.25.65.39.08.14.08.82-.16 1.5z"/>
     </svg>
   );
 }
@@ -346,7 +341,7 @@ export default function App() {
         </footer>
       </div>
 
-      {/* Floating Scroll to Top button */}
+      {/* Floating Scroll to Top button (Only visible on mobile screen widths) */}
       <AnimatePresence>
         {showScroll && (
           <motion.button
@@ -354,7 +349,7 @@ export default function App() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 20 }}
             onClick={scrollToTop}
-            className="fixed bottom-6 right-6 z-40 bg-slate-900 dark:bg-white text-white dark:text-slate-900 p-3 rounded-full shadow-lg border border-slate-200 dark:border-slate-800 hover:bg-slate-800 dark:hover:bg-slate-100 transition-all cursor-pointer flex items-center justify-center"
+            className="fixed bottom-6 right-6 z-40 bg-slate-900 dark:bg-white text-white dark:text-slate-900 p-3 rounded-full shadow-lg border border-slate-200 dark:border-slate-800 hover:bg-slate-800 dark:hover:bg-slate-100 transition-all cursor-pointer flex items-center justify-center md:hidden"
             aria-label="Scroll to top"
           >
             <ArrowUp size={20} />
