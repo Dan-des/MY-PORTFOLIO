@@ -9,10 +9,10 @@ import Contact from './pages/Contact';
 
 // Centralized social links configuration for easy updates
 export const SOCIAL_LINKS = {
-  linkedin: "https://linkedin.com",
+  linkedin: "https://www.linkedin.com/in/olatundedaniel/",
   behance: "https://behance.net",
   dribbble: "https://dribbble.com",
-  instagram: "https://instagram.com"
+  instagram: "https://www.instagram.com/rarestardesigns/"
 };
 
 // Custom Behance Icon since brand icons are not in Lucide-react
