@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Phone, Send } from 'lucide-react';
 import { useState } from 'react';
-import { SOCIAL_LINKS, BehanceIcon, LinkedinIcon, InstagramIcon, DribbbleIcon } from '../App';
+import { SOCIAL_LINKS, BehanceIcon, LinkedinIcon, InstagramIcon, TiktokIcon, WhatsappIcon } from '../App';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -151,13 +151,22 @@ export default function Contact() {
                 <BehanceIcon size={20} />
               </a>
               <a 
-                href={SOCIAL_LINKS.dribbble} 
+                href={SOCIAL_LINKS.tiktok} 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="bg-white dark:bg-slate-950 hover:bg-slate-100 dark:hover:bg-slate-900 border border-slate-200 dark:border-slate-800 p-2.5 rounded-full shadow-sm text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
-                aria-label="Dribbble"
+                aria-label="TikTok"
               >
-                <DribbbleIcon size={20} />
+                <TiktokIcon size={20} />
+              </a>
+              <a 
+                href={SOCIAL_LINKS.whatsapp} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="bg-white dark:bg-slate-950 hover:bg-slate-100 dark:hover:bg-slate-900 border border-slate-200 dark:border-slate-800 p-2.5 rounded-full shadow-sm text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
+                aria-label="WhatsApp"
+              >
+                <WhatsappIcon size={20} />
               </a>
               <a 
                 href={SOCIAL_LINKS.instagram} 

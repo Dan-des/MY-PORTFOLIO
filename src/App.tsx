@@ -10,9 +10,10 @@ import Contact from './pages/Contact';
 // Centralized social links configuration for easy updates
 export const SOCIAL_LINKS = {
   linkedin: "https://www.linkedin.com/in/olatundedaniel/",
-  behance: "https://behance.net",
-  dribbble: "https://dribbble.com",
-  instagram: "https://www.instagram.com/rarestardesigns/"
+  behance: "https://behance.net/danielolatunde1",
+  instagram: "https://www.instagram.com/rarestardesigns/",
+  tiktok: "https://www.tiktok.com/@thebig.dan?is_from_webapp=1&sender_device=pc",
+  whatsapp: "https://wa.me/2348164154662"
 };
 
 // Custom Behance Icon since brand icons are not in Lucide-react
@@ -72,8 +73,8 @@ export function InstagramIcon({ size = 20, className = "" }: { size?: number; cl
   );
 }
 
-// Custom Dribbble Icon
-export function DribbbleIcon({ size = 20, className = "" }: { size?: number; className?: string }) {
+// Custom TikTok Icon
+export function TiktokIcon({ size = 20, className = "" }: { size?: number; className?: string }) {
   return (
     <svg
       width={size}
@@ -86,8 +87,27 @@ export function DribbbleIcon({ size = 20, className = "" }: { size?: number; cla
       strokeLinejoin="round"
       className={className}
     >
-      <circle cx="12" cy="12" r="10" />
-      <path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.49-11.05 1-11.6 8.56" />
+      <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+    </svg>
+  );
+}
+
+// Custom WhatsApp Icon
+export function WhatsappIcon({ size = 20, className = "" }: { size?: number; className?: string }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <path d="M17.49 15.3c-.3-.15-1.74-.86-2-1-.28-.1-.48-.15-.68.15-.2.3-.78.98-.95 1.18-.18.2-.35.23-.65.08A9.82 9.82 0 0 1 9.4 12.8a10.82 10.82 0 0 1-1.92-2.4c-.17-.3-.02-.47.13-.62.14-.13.3-.35.45-.53.15-.17.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.68-1.63-.93-2.24-.24-.6-.5-.5-.68-.5-.18 0-.38-.03-.58-.03a1.12 1.12 0 0 0-.82.38 3.4 3.4 0 0 0-1.06 2.53c0 1.5 1.08 2.93 1.23 3.13.15.2 2.11 3.22 5.12 4.52.72.3 1.28.5 1.72.64.72.23 1.38.2 1.9.12.58-.08 1.74-.7 1.98-1.4.24-.67.24-1.25.17-1.37-.08-.12-.26-.2-.56-.35z" />
+      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
     </svg>
   );
 }
@@ -277,15 +297,6 @@ export default function App() {
                 <BehanceIcon size={20} />
               </a>
               <a 
-                href={SOCIAL_LINKS.dribbble} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="hover:text-slate-900 dark:hover:text-white transition-colors" 
-                aria-label="Dribbble"
-              >
-                <DribbbleIcon size={20} />
-              </a>
-              <a 
                 href={SOCIAL_LINKS.instagram} 
                 target="_blank" 
                 rel="noopener noreferrer" 
@@ -293,6 +304,24 @@ export default function App() {
                 aria-label="Instagram"
               >
                 <InstagramIcon size={20} />
+              </a>
+              <a 
+                href={SOCIAL_LINKS.tiktok} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="hover:text-slate-900 dark:hover:text-white transition-colors" 
+                aria-label="TikTok"
+              >
+                <TiktokIcon size={20} />
+              </a>
+              <a 
+                href={SOCIAL_LINKS.whatsapp} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="hover:text-slate-900 dark:hover:text-white transition-colors" 
+                aria-label="WhatsApp"
+              >
+                <WhatsappIcon size={20} />
               </a>
             </div>
           </div>
