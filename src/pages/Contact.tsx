@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Phone, Send } from 'lucide-react';
 import { useState } from 'react';
+import { SOCIAL_LINKS, BehanceIcon, LinkedinIcon, InstagramIcon, DribbbleIcon } from '../App';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -73,8 +74,8 @@ export default function Contact() {
       className="py-12 max-w-5xl mx-auto"
     >
       <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold mb-4 text-slate-900">Let's Work Together</h2>
-        <p className="text-slate-600 max-w-2xl mx-auto">
+        <h2 className="text-3xl font-bold mb-4 text-slate-900 dark:text-white">Let's Work Together</h2>
+        <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
           Ready to elevate your brand identity or need standout digital content? Drop a message below and I will get back to you as soon as possible.
         </p>
       </div>
@@ -85,43 +86,88 @@ export default function Contact() {
           initial={{ x: -20, opacity: 0 }} 
           animate={{ x: 0, opacity: 1 }} 
           transition={{ delay: 0.2 }}
-          className="flex flex-col justify-center space-y-8 bg-slate-50 p-8 rounded-lg border border-slate-200"
+          className="flex flex-col justify-between space-y-8 bg-slate-50 dark:bg-slate-900/50 p-8 rounded-lg border border-slate-200 dark:border-slate-800"
         >
-          <h3 className="text-2xl font-bold text-slate-900 mb-2">Contact Details</h3>
-          
-          <div className="flex items-start gap-4">
-            <div className="bg-white p-3 rounded-full shadow-sm border border-slate-200">
-              <Phone className="text-slate-700" size={24} />
+          <div className="space-y-8">
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Contact Details</h3>
+            
+            <div className="flex items-start gap-4">
+              <div className="bg-white dark:bg-slate-950 p-3 rounded-full shadow-sm border border-slate-200 dark:border-slate-800">
+                <Phone className="text-slate-700 dark:text-slate-350" size={24} />
+              </div>
+              <div>
+                <p className="text-sm font-medium text-slate-500 mb-1">Phone</p>
+                <a href="tel:+2348164154662" className="text-lg font-semibold text-slate-900 dark:text-white hover:text-slate-600 dark:hover:text-slate-300 transition-colors">
+                  +2348164154662
+                </a>
+              </div>
             </div>
-            <div>
-              <p className="text-sm font-medium text-slate-500 mb-1">Phone</p>
-              <a href="tel:+2348164154662" className="text-lg font-semibold text-slate-900 hover:text-slate-600 transition-colors">
-                +2348164154662
-              </a>
+
+            <div className="flex items-start gap-4">
+              <div className="bg-white dark:bg-slate-950 p-3 rounded-full shadow-sm border border-slate-200 dark:border-slate-800">
+                <Mail className="text-slate-700 dark:text-slate-350" size={24} />
+              </div>
+              <div>
+                <p className="text-sm font-medium text-slate-500 mb-1">Email</p>
+                <a href="mailto:workwithdan6@gmail.com" className="text-lg font-semibold text-slate-900 dark:text-white hover:text-slate-600 dark:hover:text-slate-300 transition-colors">
+                  workwithdan6@gmail.com
+                </a>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <div className="bg-white dark:bg-slate-950 p-3 rounded-full shadow-sm border border-slate-200 dark:border-slate-800">
+                <MapPin className="text-slate-700 dark:text-slate-350" size={24} />
+              </div>
+              <div>
+                <p className="text-sm font-medium text-slate-500 mb-1">Location</p>
+                <p className="text-lg font-semibold text-slate-900 dark:text-white">
+                  Lagos, Nigeria
+                </p>
+              </div>
             </div>
           </div>
 
-          <div className="flex items-start gap-4">
-            <div className="bg-white p-3 rounded-full shadow-sm border border-slate-200">
-              <Mail className="text-slate-700" size={24} />
-            </div>
-            <div>
-              <p className="text-sm font-medium text-slate-500 mb-1">Email</p>
-              <a href="mailto:workwithdan6@gmail.com" className="text-lg font-semibold text-slate-900 hover:text-slate-600 transition-colors">
-                workwithdan6@gmail.com
+          {/* Social Media Connections */}
+          <div className="border-t border-slate-200 dark:border-slate-800 pt-6 mt-8">
+            <p className="text-sm font-medium text-slate-500 mb-3">Connect on Socials</p>
+            <div className="flex items-center space-x-4">
+              <a 
+                href={SOCIAL_LINKS.linkedin} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="bg-white dark:bg-slate-950 hover:bg-slate-100 dark:hover:bg-slate-900 border border-slate-200 dark:border-slate-800 p-2.5 rounded-full shadow-sm text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
+                aria-label="LinkedIn"
+              >
+                <LinkedinIcon size={20} />
               </a>
-            </div>
-          </div>
-
-          <div className="flex items-start gap-4">
-            <div className="bg-white p-3 rounded-full shadow-sm border border-slate-200">
-              <MapPin className="text-slate-700" size={24} />
-            </div>
-            <div>
-              <p className="text-sm font-medium text-slate-500 mb-1">Location</p>
-              <p className="text-lg font-semibold text-slate-900">
-                Lagos, Nigeria
-              </p>
+              <a 
+                href={SOCIAL_LINKS.behance} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="bg-white dark:bg-slate-950 hover:bg-slate-100 dark:hover:bg-slate-900 border border-slate-200 dark:border-slate-800 p-2.5 rounded-full shadow-sm text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
+                aria-label="Behance"
+              >
+                <BehanceIcon size={20} />
+              </a>
+              <a 
+                href={SOCIAL_LINKS.dribbble} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="bg-white dark:bg-slate-950 hover:bg-slate-100 dark:hover:bg-slate-900 border border-slate-200 dark:border-slate-800 p-2.5 rounded-full shadow-sm text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
+                aria-label="Dribbble"
+              >
+                <DribbbleIcon size={20} />
+              </a>
+              <a 
+                href={SOCIAL_LINKS.instagram} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="bg-white dark:bg-slate-950 hover:bg-slate-100 dark:hover:bg-slate-900 border border-slate-200 dark:border-slate-800 p-2.5 rounded-full shadow-sm text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
+                aria-label="Instagram"
+              >
+                <InstagramIcon size={20} />
+              </a>
             </div>
           </div>
         </motion.div>
@@ -133,14 +179,14 @@ export default function Contact() {
           transition={{ delay: 0.3 }}
         >
           {status === 'success' ? (
-            <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-8 text-center shadow-sm">
-              <h3 className="text-2xl font-bold text-emerald-950 mb-2">Message Sent Successfully!</h3>
-              <p className="text-emerald-800 mb-6">
+            <div className="bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-900 rounded-lg p-8 text-center shadow-sm">
+              <h3 className="text-2xl font-bold text-emerald-950 dark:text-emerald-350 mb-2">Message Sent Successfully!</h3>
+              <p className="text-emerald-800 dark:text-emerald-400 mb-6">
                 Thank you for reaching out. I'll get back to you as soon as possible.
               </p>
               <button
                 onClick={() => setStatus('idle')}
-                className="bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-6 py-2.5 rounded-md transition-colors"
+                className="bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-6 py-2.5 rounded-md transition-colors cursor-pointer"
               >
                 Send Another Message
               </button>
@@ -148,58 +194,58 @@ export default function Contact() {
           ) : (
             <form className="space-y-6" onSubmit={handleSubmit}>
               {status === 'error' && (
-                <div className="bg-rose-50 border border-rose-200 text-rose-900 px-4 py-3 rounded-md text-sm font-medium">
+                <div className="bg-rose-50 dark:bg-rose-950/20 border border-rose-200 dark:border-rose-900 text-rose-900 dark:text-rose-350 px-4 py-3 rounded-md text-sm font-medium">
                   {errorMessage}
                 </div>
               )}
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-semibold text-slate-700 mb-2">First Name *</label>
+                  <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">First Name *</label>
                   <input 
                     type="text" 
                     name="firstName"
                     value={formData.firstName}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-md border border-slate-300 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent transition-all bg-white" 
+                    className="w-full px-4 py-3 rounded-md border border-slate-300 dark:border-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900 dark:focus:ring-white focus:border-transparent transition-all bg-white dark:bg-slate-900 text-slate-900 dark:text-white" 
                     placeholder="John" 
                     required
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-slate-700 mb-2">Last Name</label>
+                  <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Last Name</label>
                   <input 
                     type="text" 
                     name="lastName"
                     value={formData.lastName}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-md border border-slate-300 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent transition-all bg-white" 
+                    className="w-full px-4 py-3 rounded-md border border-slate-300 dark:border-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900 dark:focus:ring-white focus:border-transparent transition-all bg-white dark:bg-slate-900 text-slate-900 dark:text-white" 
                     placeholder="Doe" 
                   />
                 </div>
               </div>
               
               <div>
-                <label className="block text-sm font-semibold text-slate-700 mb-2">Email Address *</label>
+                <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Email Address *</label>
                 <input 
                   type="email" 
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-md border border-slate-300 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent transition-all bg-white" 
+                  className="w-full px-4 py-3 rounded-md border border-slate-300 dark:border-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900 dark:focus:ring-white focus:border-transparent transition-all bg-white dark:bg-slate-900 text-slate-900 dark:text-white" 
                   placeholder="john@example.com" 
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-slate-700 mb-2">Message *</label>
+                <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Message *</label>
                 <textarea 
                   rows={5} 
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-md border border-slate-300 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent transition-all bg-white resize-none" 
+                  className="w-full px-4 py-3 rounded-md border border-slate-300 dark:border-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900 dark:focus:ring-white focus:border-transparent transition-all bg-white dark:bg-slate-900 text-slate-900 dark:text-white resize-none" 
                   placeholder="Tell me about your project..."
                   required
                 ></textarea>
@@ -208,12 +254,12 @@ export default function Contact() {
               <button 
                 type="submit" 
                 disabled={status === 'loading'}
-                className={`w-full bg-slate-900 text-white font-medium py-4 rounded-md hover:bg-slate-800 transition-colors flex items-center justify-center gap-2 shadow-md hover:shadow-lg ${status === 'loading' ? 'opacity-50 cursor-not-allowed' : ''}`}
+                className={`w-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-medium py-4 rounded-md hover:bg-slate-800 dark:hover:bg-slate-100 transition-colors flex items-center justify-center gap-2 shadow-md hover:shadow-lg cursor-pointer ${status === 'loading' ? 'opacity-50 cursor-not-allowed' : ''}`}
               >
                 {status === 'loading' ? (
                   <>
                     Sending...
-                    <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <svg className="animate-spin h-5 w-5 text-white dark:text-slate-900" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>

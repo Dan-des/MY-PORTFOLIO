@@ -53,8 +53,8 @@ export default function Skills() {
       transition={{ duration: 0.5 }} 
       className="py-12 max-w-4xl mx-auto"
     >
-      <h2 className="text-4xl font-bold mb-4 text-center text-slate-900 tracking-tight">Technical & Creative Arsenal</h2>
-      <p className="text-lg text-slate-600 text-center max-w-xl mx-auto mb-16">
+      <h2 className="text-4xl font-bold mb-4 text-center text-slate-900 dark:text-white tracking-tight">Technical & Creative Arsenal</h2>
+      <p className="text-lg text-slate-600 dark:text-slate-400 text-center max-w-xl mx-auto mb-16">
         A visual representation of my design expertise, software masteries, and core professional competencies.
       </p>
       
@@ -66,21 +66,21 @@ export default function Skills() {
           transition={{ delay: 0.1 }}
         >
           <div className="flex items-center gap-4 mb-10">
-            <div className="h-px bg-slate-200 flex-grow"></div>
-            <h3 className="text-xl font-bold text-slate-900 tracking-tight">Design & Software</h3>
-            <div className="h-px bg-slate-200 flex-grow"></div>
+            <div className="h-px bg-slate-200 dark:bg-slate-800 flex-grow"></div>
+            <h3 className="text-xl font-bold text-slate-900 dark:text-white tracking-tight">Design & Software</h3>
+            <div className="h-px bg-slate-200 dark:bg-slate-800 flex-grow"></div>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
             {tools.map((tool) => (
               <div key={tool.name} className="space-y-2">
                 <div className="flex justify-between items-center text-sm font-semibold">
-                  <span className="text-slate-800">{tool.name}</span>
-                  <span className="text-indigo-600 font-bold">
+                  <span className="text-slate-800 dark:text-slate-200">{tool.name}</span>
+                  <span className="text-indigo-600 dark:text-indigo-400 font-bold">
                     <CountUp to={tool.percentage} />
                   </span>
                 </div>
-                <div className="w-full h-3 bg-slate-100 border border-slate-200/50 rounded-full overflow-hidden relative shadow-inner">
+                <div className="w-full h-3 bg-slate-100 dark:bg-slate-900 border border-slate-200/50 dark:border-slate-800 rounded-full overflow-hidden relative shadow-inner">
                   <motion.div 
                     initial={{ width: 0 }}
                     whileInView={{ width: `${tool.percentage}%` }}
@@ -101,27 +101,27 @@ export default function Skills() {
           transition={{ delay: 0.2 }}
         >
           <div className="flex items-center gap-4 mb-10">
-            <div className="h-px bg-slate-200 flex-grow"></div>
-            <h3 className="text-xl font-bold text-slate-900 tracking-tight">Professional Competencies</h3>
-            <div className="h-px bg-slate-200 flex-grow"></div>
+            <div className="h-px bg-slate-200 dark:bg-slate-800 flex-grow"></div>
+            <h3 className="text-xl font-bold text-slate-900 dark:text-white tracking-tight">Professional Competencies</h3>
+            <div className="h-px bg-slate-200 dark:bg-slate-800 flex-grow"></div>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
             {softSkills.map((skill) => (
               <div key={skill.name} className="space-y-2">
                 <div className="flex justify-between items-center text-sm font-semibold">
-                  <span className="text-slate-800">{skill.name}</span>
-                  <span className="text-slate-900 font-bold">
+                  <span className="text-slate-800 dark:text-slate-200">{skill.name}</span>
+                  <span className="text-slate-900 dark:text-slate-200 font-bold">
                     <CountUp to={skill.percentage} />
                   </span>
                 </div>
-                <div className="w-full h-3 bg-slate-100 border border-slate-200/50 rounded-full overflow-hidden relative shadow-inner">
+                <div className="w-full h-3 bg-slate-100 dark:bg-slate-900 border border-slate-200/50 dark:border-slate-800 rounded-full overflow-hidden relative shadow-inner">
                   <motion.div 
                     initial={{ width: 0 }}
                     whileInView={{ width: `${skill.percentage}%` }}
                     viewport={{ once: true }}
                     transition={{ duration: 1.2, ease: "easeOut" }}
-                    className="h-full bg-gradient-to-r from-slate-900 to-slate-700 rounded-full"
+                    className="h-full bg-gradient-to-r from-slate-900 to-slate-700 dark:from-slate-200 dark:to-slate-400 rounded-full"
                   />
                 </div>
               </div>

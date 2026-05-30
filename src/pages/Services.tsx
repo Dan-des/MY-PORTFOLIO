@@ -47,20 +47,20 @@ export default function Services() {
       transition={{ duration: 0.5 }} 
       className="py-12"
     >
-      <h2 className="text-3xl font-bold mb-8 text-slate-900">What I Do</h2>
+      <h2 className="text-3xl font-bold mb-8 text-slate-900 dark:text-white">What I Do</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {services.map((svc, idx) => (
           <motion.div 
             key={idx} 
             whileHover={{ y: -5 }}
-            className="p-8 bg-white border border-slate-200 rounded-lg shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
+            className="p-8 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
           >
             <div>
-              <div className="text-slate-900 mb-6 bg-slate-50 w-16 h-16 flex items-center justify-center rounded-lg border border-slate-100">
+              <div className="text-slate-900 dark:text-white mb-6 bg-slate-50 dark:bg-slate-950 w-16 h-16 flex items-center justify-center rounded-lg border border-slate-100 dark:border-slate-800">
                 {svc.icon}
               </div>
-              <h3 className="text-xl font-bold mb-3 text-slate-900">{svc.title}</h3>
-              <p className="text-slate-600 leading-relaxed text-sm md:text-base">{svc.desc}</p>
+              <h3 className="text-xl font-bold mb-3 text-slate-900 dark:text-white">{svc.title}</h3>
+              <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm md:text-base">{svc.desc}</p>
             </div>
           </motion.div>
         ))}
